@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول مذاكرة حماسي! 🚀</title>
+    <link rel="stylesheet" href="stayle.css">
+</head>
+<body>
+
+<!--  -->
+
+<script>
+    function toggleStatus(element) {
+        if (element.innerText === "❌") {
+            element.innerText = "✅";
+            element.style.color = "lime"; // تغيير اللون للأخضر عند الإنجاز
+        } else {
+            element.innerText = "❌";
+            element.style.color = "red"; // اللون الأحمر عند عدم الإنجاز
+        }
+    }
+
+    // حفظ البيانات عند التغيير
+    document.addEventListener('input', function(event) {
+        if (event.target.tagName === 'TD' && event.target.isContentEditable) {
+            localStorage.setItem(event.target.id, event.target.innerText);
+        }
+    });
+
+    // استعادة البيانات عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        const editableCells = document.querySelectorAll('td[contenteditable="true"]');
+        editableCells.forEach(function(cell) {
+            const savedData = localStorage.getItem(cell.id);
+            if (savedData) {
+                cell.innerText = savedData;
+            }
+        });
+    });
+</script>
+    
+<!--  -->
+<!-- //////////// -->
+
+<div id="welcome-box">
+    <p id="welcome-text"></p>
+</div>
+<!-- 
+
+<////// -->
+
+
+<!-- //////// -->
+
+<div id="welcome-box">
+    <p id="welcome-text"></p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const messages = [
+        "🚀 رانيا، لا يوجد مستحيل لمن يؤمن بنفسه! انطلقي بقوة! 💪",
+        "📚 كل صفحة تذاكريها تقربك خطوة من حلمك! استمري! 🌟",
+        "🎯 النجاح ليس صدفة، بل نتيجة اجتهادك! استمري في التقدم! ✨",
+        "🔥 الثانوية العامة مجرد محطة، والقادم أفضل بكثير! واصلي! 🚀",
+        "💡 الذكاء هو العمل بذكاء، لذا نظمي وقتك وانطلقي! ⏳",
+        "🌟 الإرادة القوية تصنع المستحيل! وأنتِ قادرة على ذلك! 💪"
+    ];
+
+    function showMessage() {
+        let randomIndex = Math.floor(Math.random() * messages.length);
+        let message = messages[randomIndex];
+        let textElement = document.getElementById("welcome-text");
+        let index = 0;
+        textElement.innerHTML = ""; // مسح الرسالة السابقة
+
+        function typeMessage() {
+            if (index < message.length) {
+                textElement.innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeMessage, 80);
+            } else {
+                setTimeout(() => {
+                    document.getElementById("welcome-box").style.opacity = "0";
+                    setTimeout(() => {
+                        document.getElementById("welcome-box").style.display = "none";
+                    }, 500);
+                }, 4000); // تختفي بعد 4 ثوانٍ
+            }
+        }
+
+        document.getElementById("welcome-box").style.display = "block";
+        document.getElementById("welcome-box").style.opacity = "1";
+        typeMessage();
+    }
+
+    // عرض الرسالة الأولى عند تحميل الصفحة
+    showMessage();
+
+    // تشغيل الرسالة الجديدة كل دقيقتين (120,000 ملي ثانية)
+    setInterval(showMessage, 120000);
+});
+</script>
+    <h1>📚 جدول مذاكرة حماسي! 🚀</h1>
+    <h1 class="neme">rania ramadan</h1>
+    <table>
+        <tr>
+            <th>اليوم</th>
+            <th>المادة 1</th>
+            <th>المادة 2</th>
+            <th>المادة 3</th>
+            <th>الملاحظات</th>
+            <th>(1)الاسبوع</th>
+        </tr>
+        <tr>
+            <td>السبت</td>
+            <td id="cell1" contenteditable="true"></td>
+            <td id="cell2" contenteditable="true"></td>
+            <td id="cell3" contenteditable="true"></td>
+            <td id="cell4" contenteditable="true"></td>
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الأحد</td>
+            <td id="cell5" contenteditable="true"></td>
+            <td id="cell6" contenteditable="true"></td>
+            <td id="cell7" contenteditable="true"></td>
+            <td id="cell8" contenteditable="true"></td>  
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الإثنين</td>
+            <td id="cell9" contenteditable="true"></td>
+            <td id="cell10" contenteditable="true"></td>
+            <td id="cell11" contenteditable="true"></td>
+            <td id="cell12" contenteditable="true"></td>
+        <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+        <tr>
+            <td>الثلاثاء</td>
+            <td id="cell13" contenteditable="true"></td>
+            <td id="cell14" contenteditable="true"></td>
+            <td id="cell15" contenteditable="true"></td>
+            <td id="cell16" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+        <tr>
+            <td>الاربعاء</td>
+            <td id="cell17" contenteditable="true"></td>
+            <td id="cell18" contenteditable="true"></td>
+            <td id="cell19" contenteditable="true"></td>
+            <td id="cell20" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>الخميس</td>
+            <td id="cell21" contenteditable="true"></td>
+            <td id="cell22" contenteditable="true"></td>
+            <td id="cell23" contenteditable="true"></td>
+            <td id="cell24" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+    </table> <table>
+        <tr>
+            <th>اليوم</th>
+            <th>المادة 1</th>
+            <th>المادة 2</th>
+            <th>المادة 3</th>
+            <th>الملاحظات</th>
+            <th>(2)الاسبوع</th>
+        </tr>
+        <tr>
+            <td>السبت</td>
+            <td id="cell25" contenteditable="true"></td>
+            <td id="cell26" contenteditable="true"></td>
+            <td id="cell27" contenteditable="true"></td>
+            <td id="cell28" contenteditable="true"></td>
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الأحد</td>
+            <td id="cell29" contenteditable="true"></td>
+            <td id="cell30" contenteditable="true"></td>
+            <td id="cell31" contenteditable="true"></td>
+            <td id="cell32" contenteditable="true"></td>  
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الإثنين</td>
+            <td id="cell33" contenteditable="true"></td>
+            <td id="cell34" contenteditable="true"></td>
+            <td id="cell35" contenteditable="true"></td>
+            <td id="cell36" contenteditable="true"></td>
+        <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+        <tr>
+            <td>الثلاثاء</td>
+            <td id="cell37" contenteditable="true"></td>
+            <td id="cell38" contenteditable="true"></td>
+            <td id="cell39" contenteditable="true"></td>
+            <td id="cell40" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+        <tr>
+            <td>الاربعاء</td>
+            <td id="cell41" contenteditable="true"></td>
+            <td id="cell42" contenteditable="true"></td>
+            <td id="cell43" contenteditable="true"></td>
+            <td id="cell44" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>الخميس</td>
+            <td id="cell45" contenteditable="true"></td>
+            <td id="cell46" contenteditable="true"></td>
+            <td id="cell47" contenteditable="true"></td>
+            <td id="cell48" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+    </table>
+    <table>
+        <tr>
+            <th>اليوم</th>
+            <th>المادة 1</th>
+            <th>المادة 2</th>
+            <th>المادة 3</th>
+            <th>الملاحظات</th>
+            <th>الاسبوع(3)</th>
+        </tr>
+        <tr>
+            <td>السبت</td>
+            <td id="cell49" contenteditable="true"></td>
+            <td id="cell50" contenteditable="true"></td>
+            <td id="cell51" contenteditable="true"></td>
+            <td id="cell52" contenteditable="true"></td>
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الأحد</td>
+            <td id="cell53" contenteditable="true"></td>
+            <td id="cell54" contenteditable="true"></td>
+            <td id="cell55" contenteditable="true"></td>
+            <td id="cell56" contenteditable="true"></td>  
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الإثنين</td>
+            <td id="cell57" contenteditable="true"></td>
+            <td id="cell58" contenteditable="true"></td>
+            <td id="cell59" contenteditable="true"></td>
+            <td id="cell60" contenteditable="true"></td>
+        <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+        <tr>
+            <td>الثلاثاء</td>
+            <td id="cell61" contenteditable="true"></td>
+            <td id="cell62" contenteditable="true"></td>
+            <td id="cell63" contenteditable="true"></td>
+            <td id="cell64" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+        <tr>
+            <td>الاربعاء</td>
+            <td id="cell65" contenteditable="true"></td>
+            <td id="cell66" contenteditable="true"></td>
+            <td id="cell67" contenteditable="true"></td>
+            <td id="cell68" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>الخميس</td>
+            <td id="cell69" contenteditable="true"></td>
+            <td id="cell70" contenteditable="true"></td>
+            <td id="cell71" contenteditable="true"></td>
+            <td id="cell72" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+    </table>
+    <table>
+        <tr>
+            <th>اليوم</th>
+            <th>المادة 1</th>
+            <th>المادة 2</th>
+            <th>المادة 3</th>
+            <th>الملاحظات</th>
+            <th>(4)الاسبوع</th>
+        </tr>
+        <tr>
+            <td>السبت</td>
+            <td id="cell73" contenteditable="true"></td>
+            <td id="cell74" contenteditable="true"></td>
+            <td id="cell75" contenteditable="true"></td>
+            <td id="cell76" contenteditable="true"></td>
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الأحد</td>
+            <td id="cell77" contenteditable="true"></td>
+            <td id="cell78" contenteditable="true"></td>
+            <td id="cell79" contenteditable="true"></td>
+            <td id="cell80" contenteditable="true"></td>  
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+        <tr>
+            <td>الإثنين</td>
+            <td id="cell81" contenteditable="true"></td>
+            <td id="cell82" contenteditable="true"></td>
+            <td id="cell83" contenteditable="true"></td>
+            <td id="cell84" contenteditable="true"></td>
+        <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+        <tr>
+            <td>الثلاثاء</td>
+            <td id="cell85" contenteditable="true"></td>
+            <td id="cell86" contenteditable="true"></td>
+            <td id="cell87" contenteditable="true"></td>
+            <td id="cell88" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+        <tr>
+            <td>الاربعاء</td>
+            <td id="cell89" contenteditable="true"></td>
+            <td id="cell90" contenteditable="true"></td>
+            <td id="cell91" contenteditable="true"></td>
+            <td id="cell92" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>الخميس</td>
+            <td id="cell93" contenteditable="true"></td>
+            <td id="cell94" contenteditable="true"></td>
+            <td id="cell95" contenteditable="true"></td>
+            <td id="cell96" contenteditable="true"></td> 
+            <td class="status" onclick="toggleStatus(this)">❌</td>
+
+        </tr>
+
+    </table>
+
+    <section>
+
+        <h2>
+
+            اتمني ليكي مزيدا من التقدم ي رورو 
+        </h2>
+
+
+    </section>
+
+    <div class="image-container">
+        <img src="imeg.jpg1.jpeg" alt="صورة رانيا">
+    </div>
+</body>
+</html>
